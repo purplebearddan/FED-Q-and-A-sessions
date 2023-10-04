@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --font-size: 16px;
+
+    --background: #0f191e;
+    --font-color: #eee;
+
+    --font: 'Poppins', sans-serif;
+}
+
+body {
+    color-scheme: dark;
+    background-color: var(--background);
+    color: var(--font-color);
+    font-family: var(--font);
+
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+
+        --background: #89cff0;
+        --font-color: #120f0f;
+    }
+
+    body {
+        color-scheme: light;
+    }
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+
+.input-group {
+    --border-radius: 0.5rem;
+
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
+    background: var(--background);
+    border: solid 1px white;
+    max-width: 100%;
+}
+
+
+.group-input {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: none !important;
+    border: none;
+    font-size: 3rem;
+    padding: 0.5rem;
+
+    &:focus {
+        outline: none;
+    }
+
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.group-button {
+    display: flex;
+    position: relative;
+    background-color: var(--background);
+    border: none;
+    color: var(--font-color);
+    border-left: solid white 1px;
+    aspect-ratio: 1 / 1;
+    font-size: 3rem;
+    padding: 0.5rem;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    align-items: center;
+    justify-content: center;
+    width: 10svw;
+
+    &:hover {
+        filter: brightness(1.2);
+        cursor: pointer;
+    }
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.task .task-options {
+    opacity: 0;
+}
+
+.task:hover .task-options {
+    opacity: 1;
+}
+
+.task .task-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.task-option-button {
+    fill: var(--font-color);
+    background-color: transparent !important;
+    border: none;
+    border-radius: 1rem;
+    aspect-ratio: 1 / 1;
+    font-size: var(--font-size);
+}
+
+.svg-stroke {
+    stroke: var(--font-color);
+}
+
+.task-option-button img {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    stroke: var(--font-color);
+    fill: var(--font-color);
+}
+
+.complete {
+    text-decoration: line-through;
+}
