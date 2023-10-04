@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <section id="scoreBoardWrapper">
+            <h2>Score:</h2>
+            <section id="scoreBoard"></section>
+        </section>
+        <form>
+            <input type="number" name="numberGuess" placeholder="Add to score" min="1" max="10" id="numberGuess">
+            <button>Guess</button>
+        </form>
+
+        <script defer>
+
+            const scoreObj = {
+                score: 0
+            }
+
+            const scoreBoard = document.querySelector('#scoreBoard')
+            const form = document.querySelector('form')
+            const inputField = document.querySelector('#numberGuess')
+            const button = document.querySelector('form>button')
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault()
+
+                scoreObj.score += parseInt(inputField.value)
+                scoreBoard.textContent = scoreObj.score
+            })
+
+        </script>
+    </body>
+
+</html>
